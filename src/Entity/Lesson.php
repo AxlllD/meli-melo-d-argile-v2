@@ -20,9 +20,6 @@ class Lesson
     #[ORM\Column]
     private ?float $Price = null;
 
-    #[ORM\Column(length: 255, nullable: true)]
-    private ?string $Items = null;
-
     #[ORM\Column(type: Types::TEXT, nullable: true)]
     private ?string $Description = null;
 
@@ -58,17 +55,6 @@ class Lesson
         return $this;
     }
 
-    public function getItems(): ?string
-    {
-        return $this->Items;
-    }
-
-    public function setItems(?string $Items): static
-    {
-        $this->Items = $Items;
-
-        return $this;
-    }
 
     public function getDescription(): ?string
     {
