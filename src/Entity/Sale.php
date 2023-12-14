@@ -26,6 +26,9 @@ class Sale
     #[ORM\Column(length: 128)]
     private ?string $Color = null;
 
+    #[ORM\Column(type: Types::TEXT)]
+    private ?string $images = null;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -75,6 +78,18 @@ class Sale
     public function setColor(string $Color): static
     {
         $this->Color = $Color;
+
+        return $this;
+    }
+
+    public function getImages(): ?string
+    {
+        return $this->images;
+    }
+
+    public function setImages(string $images): static
+    {
+        $this->images = $images;
 
         return $this;
     }
